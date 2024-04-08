@@ -20,6 +20,14 @@
     #logo-container img {
       max-height: 64px; /* Adjust the max height as needed */
     }
+    /* Adjust carousel height */
+    .carousel {
+      height: 400px; /* Adjust the height as needed */
+    }
+
+    .carousel-item {
+      height: 100%;
+    }
   </style>
 </head>
 <body>
@@ -47,13 +55,33 @@
     </div>
   </nav>
 
+  
+
+  <div id="courses" class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="photos/Page 1.png"></a>
+            <a class="carousel-item" href="#two!"><img src="photos/Page 2.png"></a>
+            <a class="carousel-item" href="#three!"><img src="photos/Page 3.png"></a>
+            <a class="carousel-item" href="#four!"><img src="photos/Page 4.png"></a>
+            <a class="carousel-item" href="#five!"><img src="photos/Page 5.png"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background2.jpg" alt="Chariot Missions Institute Background Image 2"></div>
+  </div>
+  
+
   <div id="index-banner" class="parallax-container">
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center  white-text-with-shadow ">Chariot Missions Institute</h1>
+        <h1 class="header center  black-text ">Chariot Missions Institute</h1>
         <div class="row center">
-          <h5 class="header col s12 light white-text-with-shadow">Making Your Life A Miission</h5>
+          <h5 class="header col s12 light black-text">Making Your Life A Miission</h5>
         </div>
         <div class="row center">
           <a href="#courses" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Partner</a>
@@ -63,7 +91,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img src="background1.png" alt="Chariot Missions Institute Background Image"></div>
+    <!-- <div class="parallax"><img src="background1.png" alt="Chariot Missions Institute Background Image"></div> -->
   </div>
 
   <div id="about" class="container">
@@ -101,18 +129,7 @@
 
     </div>
   </div>
-
-  <div id="courses" class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light">Explore our courses and start your journey towards impactful Christian ministry.</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="background2.jpg" alt="Chariot Missions Institute Background Image 2"></div>
-  </div>
-
+  
   <div id="contact" class="container">
     <div class="section">
 
@@ -166,6 +183,24 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elems, {
+        fullWidth: true,
+        indicators: true
+      });
+  
+      function autoplay() {
+        instances.forEach(function(instance) {
+          instance.next();
+        });
+      }
+  
+      setInterval(autoplay, 5000); // Change slide every 5 seconds
+    });
+  </script>
 
   </body>
 </html>
